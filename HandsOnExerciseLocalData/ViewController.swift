@@ -7,14 +7,73 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
+    //outlets
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var tv: UITableView!
+    @IBOutlet weak var schoolNameTextField: UITextField!
+    @IBOutlet weak var numOfStudentsTextField: UITextField!
+    
+    //variables
+    let coreDataHelper: CoreDataHelper = CoreDataHelper.init()
+    var schoolArray = [School]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //setup table view
+        tv.delegate = self
+        tv.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //load data from user default
+        getName()
+        //load data from core data
+        schoolArray = coreDataHelper.fetch()
+        tv.reloadData()
+    }
+    
+    func getName() {
+        let name = UserDefaults.standard.string(forKey: "name")
+        nameLabel.text = "Hi " + name!
     }
 
 
+    @IBAction func saveButton(_ sender: Any) {
+    UserDefaults.standard.set(nameTextField.text, forKey: "name")
+        
+        nameTextField.text  = ""
+        getName()
+    }
+    
+    @IBAction func addButton(_ sender: Any) {
+        coreDataHelper.save(schoolName: schoolNameTextField.text!, numStudents: Int16(numOfStudentsTextField.text!)!)
+        
+        schoolArray = coreDataHelper.fetch()
+        tv.reloadData()
+        
+        schoolNameTextField.text = ""
+        numOfStudentsTextField.text = ""
+    }
 }
 
+extension ViewController: UITableViewDataSource, UITableViewDelegate  {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return schoolArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tvCell", for: indexPath)
+        
+        let school = schoolArray[indexPath.row]
+        
+        cell.textLabel?.text = school.name! + " (\(school.numOfStudents))"
+        
+        return  cell
+    }
+}

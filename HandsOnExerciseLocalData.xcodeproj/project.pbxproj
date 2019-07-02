@@ -13,6 +13,7 @@
 		8ECAC5C322CB51C10081BF7A /* HandsOnExerciseLocalData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAC5C122CB51C10081BF7A /* HandsOnExerciseLocalData.xcdatamodeld */; };
 		8ECAC5C522CB51C40081BF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ECAC5C422CB51C40081BF7A /* Assets.xcassets */; };
 		8ECAC5C822CB51C40081BF7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ECAC5C622CB51C40081BF7A /* LaunchScreen.storyboard */; };
+		8ECAC5F922CB9DC80081BF7A /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAC5F822CB9DC80081BF7A /* CoreDataHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8ECAC5C422CB51C40081BF7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8ECAC5C722CB51C40081BF7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8ECAC5C922CB51C40081BF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ECAC5F822CB9DC80081BF7A /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				8ECAC5C622CB51C40081BF7A /* LaunchScreen.storyboard */,
 				8ECAC5C922CB51C40081BF7A /* Info.plist */,
 				8ECAC5C122CB51C10081BF7A /* HandsOnExerciseLocalData.xcdatamodeld */,
+				8ECAC5F822CB9DC80081BF7A /* CoreDataHelper.swift */,
 			);
 			path = HandsOnExerciseLocalData;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				8ECAC5BD22CB51C10081BF7A /* ViewController.swift in Sources */,
 				8ECAC5C322CB51C10081BF7A /* HandsOnExerciseLocalData.xcdatamodeld in Sources */,
+				8ECAC5F922CB9DC80081BF7A /* CoreDataHelper.swift in Sources */,
 				8ECAC5BB22CB51C10081BF7A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
