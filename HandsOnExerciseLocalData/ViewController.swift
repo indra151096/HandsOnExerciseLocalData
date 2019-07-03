@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     //outlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var tv: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    
     @IBOutlet weak var schoolNameTextField: UITextField!
     @IBOutlet weak var numOfStudentsTextField: UITextField!
     
@@ -26,8 +27,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //setup table view
-        tv.delegate = self
-        tv.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +36,7 @@ class ViewController: UIViewController {
         getName()
         //load data from core data
         schoolArray = coreDataHelper.fetch()
-        tv.reloadData()
+        tableView.reloadData()
     }
     
     func getName() {
@@ -55,7 +56,7 @@ class ViewController: UIViewController {
         coreDataHelper.save(schoolName: schoolNameTextField.text!, numStudents: Int16(numOfStudentsTextField.text!)!)
         
         schoolArray = coreDataHelper.fetch()
-        tv.reloadData()
+        tableView.reloadData()
         
         schoolNameTextField.text = ""
         numOfStudentsTextField.text = ""

@@ -86,7 +86,7 @@
                         <outlet property="nameTextField" destination="BM2-43-Hbc" id="xWs-Br-Moy"/>
                         <outlet property="numOfStudentsTextField" destination="szg-7D-11O" id="kPI-bu-frx"/>
                         <outlet property="schoolNameTextField" destination="1yi-T5-LfO" id="TuZ-VO-25g"/>
-                        <outlet property="tv" destination="fve-Ep-dBf" id="vLw-oT-avM"/>
+                        <outlet property="tableView" destination="fve-Ep-dBf" id="byU-gy-sNR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
