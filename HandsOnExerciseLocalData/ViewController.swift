@@ -41,7 +41,13 @@ class ViewController: UIViewController {
     
     func getName() {
         let name = UserDefaults.standard.string(forKey: "name")
-        nameLabel.text = "Hi " + name!
+        
+        if name != nil {
+            nameLabel.text = "Hi " + name!
+        }
+        else {
+            nameLabel.text = ""
+        }
     }
 
 
